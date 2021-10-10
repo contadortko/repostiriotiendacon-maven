@@ -15,26 +15,26 @@
 	<div class="d-flex ">
 		<div class="card col-sm-4">
 		<div class="card-body">
-			<form action="Controlador?menu=Empleado" method="post">
+			<form action="Controlador?menu=Empleado" method="POST">
 				<div class="form-group">
 					<label>Cedula</label>
-					<input type="text" name="txtCedula" class="form-control">
+					<input type="text" value="${em.getCed()}" name="txtCedula" class="form-control">
 				</div>
 				<div class="form-group">
 					<label>Usuario</label>
-					<input type="text" name="txtUsuario" class="form-control">
+					<input type="text" value="${em.getUser()}" name="txtUsuario" class="form-control">
 				</div>
 				<div class="form-group">
 					<label>Nombre Completo</label>
-					<input type="text" name="txtNombre" class="form-control">
+					<input type="text" value="${em.getNombre()}" name="txtNombre" class="form-control">
 				</div>
 				<div class="form-group">
 					<label>Clave</label>
-					<input type="text" name="txtClave" class="form-control">
+					<input type="text" value="${em.getPass()}" name="txtClave" class="form-control">
 				</div>
 				<div class="form-group">
 					<label>Email</label>
-					<input type="text" name="txtEmail" class="form-control">
+					<input type="text" value="${em.getEmail()}"name="txtEmail" class="form-control">
 				</div>
 				<input type="submit" name="accion" value="Agregar" class="btn btn-dark">
 				<input type="submit" name="accion" value="Actualizar" class="btn btn-success">
@@ -55,17 +55,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="usuario" items="${usuarios}">
+				<c:forEach var="em" items="${usuarios}">
 					<tr>
-						<td>${usuario.getId()}</td>
-						<td>${usuario.getCed()}</td>
-						<td>${usuario.getUser()}</td>
-						<td>${usuario.getNombre()}</td>
-						<td>${usuario.getPass()}</td>
-						<td>${usuario.getEmail()}</td>
+						<td>${em.getId()}</td>
+						<td>${em.getCed()}</td>
+						<td>${em.getUser()}</td>
+						<td>${em.getNombre()}</td>
+						<td>${em.getPass()}</td>
+						<td>${em.getEmail()}</td>
 						<td>
-							<a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Modificar&id=${usuario.getId()}">Editar</a> <!-- pendiente colocar los botones --> 
-							<a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Borrar&id=${usuario.getId()}">Borrar</a> <!-- pendiente colocar los botones --> 
+							<a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Modificar&id=${em.getId()}">Editar</a> <!-- pendiente colocar los botones --> 
+							<a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Borrar&id=${em.getId()}">Borrar</a> <!-- pendiente colocar los botones --> 
 						</td>
 					</tr>
 				</c:forEach>

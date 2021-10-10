@@ -27,7 +27,9 @@ public class validar extends HttpServlet {
 	protected void doPost(jakarta.servlet.http.HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+			
 			String accion = request.getParameter("accion");
+			
 			if (accion.equalsIgnoreCase("Ingresar")) {
 				String user=request.getParameter("txtuser"); //con esta linea de codigo se recibe el user
 				String pass=request.getParameter("txtpass"); //con esta linea de codigo se recibe la contraseña
@@ -46,8 +48,5 @@ public class validar extends HttpServlet {
 			}
 		
 			
-			
-			
 	}
-
 }

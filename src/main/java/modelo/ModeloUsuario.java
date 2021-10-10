@@ -79,11 +79,11 @@ public class ModeloUsuario {
     }
 	
 	public List listar(){
+		con = Conexion.conexion();
+		String sql="SELECT * FROM usuarios";
+		List<Usuario>lista = new ArrayList<Usuario>();
 		
-		String sql="select * from usuarios";
-		List<Usuario>lista = new ArrayList<>();
 		try {
-			con = Conexion.conexion();
 			pstm = con.prepareStatement(sql);
 			rs = pstm.executeQuery();
 			while (rs.next()) {
@@ -99,15 +99,16 @@ public class ModeloUsuario {
 			
 		} catch (Exception e) {
 		}
-		return lista;
+		return listar();
 	    
     }
 	
 	public Usuario listarId(int id) {
+		con = Conexion.conexion();
 		usuario = new Usuario(); 
 		String sql="SELECT * FROM usuarios WHERE idUsuario="+id;
 		try {
-			con = Conexion.conexion();
+			
 			pstm = con.prepareStatement(sql);
 			rs = pstm.executeQuery();
 			while (rs.next()) {
@@ -129,9 +130,10 @@ public class ModeloUsuario {
 	
 	
 	public int modificar(Usuario e){
+		con = Conexion.conexion();
 		String sql="Update usuarios set cedula=?, user=?, nombre=?, contraseña=?, email=? where idUsuario =?"; //se actualiza o modifica teniendo como referencia el ID de cada usuario
 		try {
-			con = Conexion.conexion();
+			
 			pstm = con.prepareStatement(sql);
 			pstm.setString(1, usuario.getCed());
 			pstm.setString(2, usuario.getUser());
@@ -145,12 +147,16 @@ public class ModeloUsuario {
 			
 		}
 		return r;
-	    
+
+		
+		
+		
     }
 	public void borrar(int id){
+		con = Conexion.conexion();
 		String sql="Delete FROM usuarios WHERE idUsuario="+id; //se toma como referencia para borrar el id que tenemos como parametro en el método borrar
 		try {
-			con = Conexion.conexion();
+			
 			pstm = con.prepareStatement(sql);
 			pstm.executeUpdate();
 			

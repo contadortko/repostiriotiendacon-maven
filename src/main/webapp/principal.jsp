@@ -21,7 +21,7 @@
           				<a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myFrame">Producto</a>
         			</li>
         			<li class="nav-item">
-          				<a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Empleado&Listar" target="myFrame">Empleados</a>
+          				<a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Empleado" target="myFrame">Empleado</a>
         			</li>
         			<li class="nav-item">
           				<a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Clientes" target="myFrame">Clientes</a> 
@@ -53,7 +53,7 @@
    			</div>
 	</nav>
 				<div class="m-4" style="height: 550px;">
-		<iframe name="myFrame" style="height: 100%; width: 100%; border: solid"></iframe> <!-- no he logrado que se quite el borde de la tabla T.T -->
+		<iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe> <!-- no he logrado que se quite el borde de la tabla T.T -->
 	</div>
 	
 	
